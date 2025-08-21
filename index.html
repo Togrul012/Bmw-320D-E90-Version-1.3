@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">BMW 320D E90</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="BMW.svg.png">
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s ease;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            transition: color 0.5s ease;
+        }
+
+        .header-text {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: slide 12s linear infinite;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.5s ease, color 0.5s ease, transform 0.2s, box-shadow 0.2s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        #language-selector {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 10000;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+            font-size: 1rem;
+        }
+
+        #bg-toggle-btn {
+            position: fixed;
+            top: 60px;
+            right: 15px;
+            z-index: 9999;
+            padding: 10px 20px;
+            background-color: #005BAC;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        #bg-toggle-btn:hover {
+            background-color: rgba(0, 91, 172, 0.8);
+        }
+
+        #chat-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9998;
+            padding: 12px 24px;
+            background-color: #005BAC;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        #chat-toggle-btn:hover {
+            background-color: rgba(0, 91, 172, 0.8);
+        }
+
+        #chat-box {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 340px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            z-index: 9999;
+        }
+
+        #chat-box.active {
+            display: block;
+        }
+
+        #chat {
+            height: 240px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+        }
+
+        #userInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #userInput:focus {
+            outline: none;
+            border-color: #005BAC;
+            box-shadow: 0 0 5px rgba(0, 91, 172, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <select id="language-selector" onchange="changeLanguage()">
+        <option value="ru">Русский</option>
+        <option value="az" selected>Azərbaycan</option>
+        <option value="en">English</option>
+    </select>
+
+    <button id="bg-toggle-btn">Arxa Fon Dəyiş</button>
+
+    <h1>
+        <div class="header-text" id="marquee-text">BMW 320D 90E 2.0 Diesel Inline 4</div>
+    </h1>
+    <h1 id="main-title">BMW 320D</h1>
+
+    <div class="button-container">
+        <a href="https://autogidas.lt/en/auto-katalogas/bmw/320/e90-d-2005-2013-k54537">
+            <button id="btn-engine" class="dynamic-bg" style="background-color: rgba(13, 196, 252, 0.8);">Bmw 320D E90 Matoru Haqda</button></a>
+        <a href="https://www.youtube.com/watch?v=lzIVumjh6Kw">
+            <button id="btn-speed" class="dynamic-bg" style="background-color: rgba(199, 199, 199, 0.77);">Sürət Testi</button></a>
+        <a href="https://www.youtube.com/watch?v=L5KwgokaNLs">
+            <button id="btn-review" class="dynamic-bg" style="background-color: rgba(112, 50, 50, 0.77);">Bmw 320D E90 İncələməsi</button></a>
+        <a href="https://www.car.info/en-se/bmw/3-series/320d-6616349">
+            <button id="btn-gearbox" class="dynamic-bg" style="background-color: rgba(46, 90, 59, 0.8); color: darkorange;">Bmw 320D E90 Sürətlər Qutusu</button></a>
+        <a href="https://bmwuzmani.blogspot.com/2016/05/bmw-3-serisi-e90.html">
+            <button id="btn-about" class="dynamic-bg" style="background-color: rgba(69, 50, 112, 0.521);">Bmw 320D E90 Haqqında</button></a>
+        <a href="https://www.arabam.com/ikinci-el/otomobil/bmw-3-serisi-320d">
+            <button id="btn-models" class="dynamic-bg" style="background-color: rgba(50, 72, 112, 0.521);">Bmw 320D E90 Bütün Modelləri Və Haqqında</button></a>
+        <a href="https://www.instagram.com/bmw_320d_e90_fan/">
+            <button id="btn-instagram" class="dynamic-bg" style="background-color: rgba(0, 75, 213, 0.521);">Bmw 320D E90 My Instagram</button></a>
+        <a href="https://www.auto-data.net/ru/bmw-3-series-sedan-e90-320d-163hp-9928">
+            <button id="btn-engine-details" class="dynamic-bg" style="background-color: rgba(98, 0, 0, 0.46);">Bmw 320D E90 Bütün sırf matoru haqda</button></a>
+        <a href="https://www.ultimatespecs.com/ru/car-specs/BMW/5034/BMW-E90-3-Series-320d.html#google_vignette">
+            <button id="btn-tech" class="dynamic-bg" style="background-color: rgba(72, 123, 142, 0.8);">Bmw 320D E90 Texniki Haqda</button></a>
+        <a href="https://www.bmwclub.by/forum/topic/223201-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4-%D1%82%D0%BE%D0%BF%D0%BB%D0%B8%D0%B2%D0%B0/">
+            <button id="btn-fuel" class="dynamic-bg" style="background-color: rgba(72, 123, 142, 0.8);">Bmw 320D E90 Yanacağ Yandırması</button></a>
+        <a href="https://www.turbozentrum.de/BMW-3er-E90-E91-E93-320d-Hybrid-Turbo-Stage-2-49135-05895">
+            <button id="btn-turbo" class="dynamic-bg" style="background-color: rgba(153, 179, 188, 0.8);">Bmw 320D E90 Diesel Turbocharger</button></a>
+        <a href="https://www.autodoc.co.uk/car-parts/engine-oil-12094/bmw/3er-reihe/3-e90">
+            <button id="btn-oil" class="dynamic-bg" style="background-color: rgba(184, 162, 0, 0.8);">Bmw 320D E90 Oil</button></a>
+        <a href="https://clickableautomotive.com.au/products/bmw-e87-e46-e90-x1-oil-filter-11427508969">
+            <button id="btn-oil-filter" class="dynamic-bg" style="background-color: rgba(204, 255, 0, 0.8);">Bmw 320D E90 Oil Filter</button></a>
+        <a href="https://www.youtube.com/watch?v=uj-kLYHRjzc">
+            <button id="btn-oil-change" class="dynamic-bg" style="background-color: rgba(251, 255, 0, 0.8);">Bmw 320D E90 Oil Change</button></a>
+        <a href="https://www.ebay.co.uk/itm/225785244456">
+            <button id="btn-engine-block" class="dynamic-bg" style="background-color: rgba(202, 202, 202, 0.8);">Bmw 320D E90 Engine Block</button></a>
+        <a href="https://www.ebay.co.uk/itm/276630952142">
+            <button id="btn-cylinder-head" class="dynamic-bg" style="background-color: rgba(148, 132, 132, 0.8);">Bmw 320D E90 Engine Cylinder Head</button></a>
+        <a href="https://turbo.az/autos/9347726-bmw-320">
+            <button id="btn-turbo-az" class="dynamic-bg" style="background-color: rgba(47, 47, 47, 0.8); color: aliceblue;">Bmw 320D E90 Turbo.az</button></a>
+    </div>
+
+    <button id="chat-toggle-btn">AI Çat</button>
+    <div id="chat-box">
+        <h4 style="color:#005BAC; margin-bottom: 10px;">BMW 320D AI</h4>
+        <div id="chat" style="height:240px; overflow-y:auto; border:1px solid #ccc; border-radius:8px; padding:10px; margin-bottom:10px; background:#f9f9f9;"></div>
+        <input type="text" id="userInput" placeholder="Sualını yaz...">
+    </div>
+
+    <!-- BMW AI Chat and Background Toggle -->
+    <script>
+        const translations = {
+            ru: {
+                pageTitle: "BMW 320D E90",
+                marqueeText: "BMW 320D 90E 2.0 Дизель Рядный 4",
+                mainTitle: "BMW 320D",
+                btnEngine: "BMW 320D E90 О двигателе",
+                btnSpeed: "Тест скорости",
+                btnReview: "Обзор BMW 320D E90",
+                btnGearbox: "BMW 320D E90 Коробка передач",
+                btnAbout: "О BMW 320D E90",
+                btnModels: "Все модели BMW 320D E90 и информация",
+                btnInstagram: "BMW 320D E90 Мой Instagram",
+                btnEngineDetails: "BMW 320D E90 Подробно о двигателе",
+                btnTech: "BMW 320D E90 Технические данные",
+                btnFuel: "BMW 320D E90 Расход топлива",
+                btnTurbo: "BMW 320D E90 Дизельный турбонаддув",
+                btnOil: "BMW 320D E90 Масло",
+                btnOilFilter: "BMW 320D E90 Масляный фильтр",
+                btnOilChange: "BMW 320D E90 Замена масла",
+                btnEngineBlock: "BMW 320D E90 Блок двигателя",
+                btnCylinderHead: "BMW 320D E90 Головка блока цилиндров",
+                btnTurboAz: "BMW 320D E90 Turbo.az",
+                chatTitle: "BMW 320D AI",
+                chatPlaceholder: "Напишите ваш вопрос...",
+                chatUser: "Вы:",
+                chatDefault: "Извините, я не понял вопрос.",
+                chatEngine: "В BMW 320D E90 установлен 2.0L дизельный рядный 4-цилиндровый двигатель (163 л.с.).",
+                chatFuel: "Средний расход топлива составляет 5-7 л/100 км.",
+                chatSpeed: "Разгон от 0 до 100 км/ч занимает примерно 8.3 секунды.",
+                chatHello: "Привет! Я AI-помощник BMW 320D 🚗💨",
+                chatModel: "Модель BMW 320D E90 выпускалась с 2005 по 2012 год."
+            },
+            az: {
+                pageTitle: "BMW 320D E90",
+                marqueeText: "BMW 320D 90E 2.0 Diesel Inline 4",
+                mainTitle: "BMW 320D",
+                btnEngine: "Bmw 320D E90 Matoru Haqda",
+                btnSpeed: "Sürət Testi",
+                btnReview: "Bmw 320D E90 İncələməsi",
+                btnGearbox: "Bmw 320D E90 Sürətlər Qutusu",
+                btnAbout: "Bmw 320D E90 Haqqında",
+                btnModels: "Bmw 320D E90 Bütün Modelləri Və Haqqında",
+                btnInstagram: "Bmw 320D E90 My Instagram",
+                btnEngineDetails: "Bmw 320D E90 Bütün sırf matoru haqda",
+                btnTech: "Bmw 320D E90 Texniki Haqda",
+                btnFuel: "Bmw 320D E90 Yanacağ Yandırması",
+                btnTurbo: "Bmw 320D E90 Diesel Turbocharger",
+                btnOil: "Bmw 320D E90 Oil",
+                btnOilFilter: "Bmw 320D E90 Oil Filter",
+                btnOilChange: "Bmw 320D E90 Oil Change",
+                btnEngineBlock: "Bmw 320D E90 Engine Block",
+                btnCylinderHead: "Bmw 320D E90 Engine Cylinder Head",
+                btnTurboAz: "Bmw 320D E90 Turbo.az",
+                chatTitle: "BMW 320D AI",
+                chatPlaceholder: "Sualını yaz...",
+                chatUser: "Sən:",
+                chatDefault: "Bağışla, bu sualı anlamadım.",
+                chatEngine: "BMW 320D E90-da 2.0L Diesel Inline-4 mator var (163hp).",
+                chatFuel: "Ortalama 5-7L/100km yanacaq sərf edir.",
+                chatSpeed: "0-100 km/h təxminən 8.3 saniyəyə çıxır.",
+                chatHello: "Salam! Mən BMW 320D AI köməkçisiyəm 🚗💨",
+                chatModel: "BMW 320D E90 modeli 2005-2012-ci illərdə istehsal olunub."
+            },
+            en: {
+                pageTitle: "BMW 320D E90",
+                marqueeText: "BMW 320D 90E 2.0 Diesel Inline 4",
+                mainTitle: "BMW 320D",
+                btnEngine: "BMW 320D E90 Engine Info",
+                btnSpeed: "Speed Test",
+                btnReview: "BMW 320D E90 Review",
+                btnGearbox: "BMW 320D E90 Gearbox",
+                btnAbout: "About BMW 320D E90",
+                btnModels: "BMW 320D E90 All Models and Info",
+                btnInstagram: "BMW 320D E90 My Instagram",
+                btnEngineDetails: "BMW 320D E90 Detailed Engine Info",
+                btnTech: "BMW 320D E90 Technical Specs",
+                btnFuel: "BMW 320D E90 Fuel Consumption",
+                btnTurbo: "BMW 320D E90 Diesel Turbocharger",
+                btnOil: "BMW 320D E90 Oil",
+                btnOilFilter: "BMW 320D E90 Oil Filter",
+                btnOilChange: "BMW 320D E90 Oil Change",
+                btnEngineBlock: "BMW 320D E90 Engine Block",
+                btnCylinderHead: "BMW 320D E90 Engine Cylinder Head",
+                btnTurboAz: "BMW 320D E90 Turbo.az",
+                chatTitle: "BMW 320D AI",
+                chatPlaceholder: "Type your question...",
+                chatUser: "You:",
+                chatDefault: "Sorry, I didn't understand the question.",
+                chatEngine: "The BMW 320D E90 has a 2.0L Diesel Inline-4 engine (163hp).",
+                chatFuel: "Average fuel consumption is 5-7L/100km.",
+                chatSpeed: "0-100 km/h in approximately 8.3 seconds.",
+                chatHello: "Hello! I'm the BMW 320D AI assistant 🚗💨",
+                chatModel: "The BMW 320D E90 model was produced from 2005 to 2012."
+            }
+        };
+
+        const backgroundColors = [
+            '#1C2526', '#2F4F4F', '#36454F', '#2C3539', '#3C2F2F', // Tünd boz tonlar
+            '#191970', '#00008B', '#1E3A8A', '#2A4066', '#483D8B', // Tünd mavi tonlar
+            '#3C0008', '#4A2C2A', '#5C4033', '#3F000F', '#5D2E46', // Tünd qırmızı/kərpic tonlar
+            '#013220', '#1B4D3E', '#2E8B57', '#355E3B', '#4A7043', // Tünd yaşıl tonlar
+            '#2F2F2F', '#3C3C3C', '#474747', '#555555', '#666666', // Tünd boz/qara tonlar
+            '#2C003E', '#4B0082', '#5D3A61', '#3F2E56', '#4A235A', // Tünd bənövşəyi tonlar
+            'url("Bmw2.jpg")' // İlkin şəkil
+        ];
+
+        const buttonColors = {
+            '#1C2526': '#87CEEB', // Açıq mavi
+            '#2F4F4F': '#B0C4DE', // Açıq boz-mavi
+            '#36454F': '#ADD8E6', // Açıq göy
+            '#2C3539': '#B0E0E6', // Pudra mavisi
+            '#3C2F2F': '#FFDAB9', // Şaftalı
+            '#191970': '#87CEFA', // Açıq mavi
+            '#00008B': '#B0C4DE', // Açıq boz-mavi
+            '#1E3A8A': '#ADD8E6', // Açıq göy
+            '#2A4066': '#B0E0E6', // Pudra mavisi
+            '#483D8B': '#E6E6FA', // Lavanda
+            '#3C0008': '#FFB6C1', // Açıq çəhrayı
+            '#4A2C2A': '#FFDEAD', // Navaho ağ
+            '#5C4033': '#FFE4B5', // Moccasin
+            '#3F000F': '#FFF0F5', // Lavanda çəhrayı
+            '#5D2E46': '#FFC1CC', // Çəhrayı
+            '#013220': '#98FB98', // Açıq yaşıl
+            '#1B4D3E': '#90EE90', // Açıq yaşıl
+            '#2E8B57': '#ADFF2F', // Yaşıl-sarı
+            '#355E3B': '#7CFC00', // Çəmən yaşıl
+            '#4A7043': '#9ACD32', // Sarı-yaşıl
+            '#2F2F2F': '#D3D3D3', // Açıq boz
+            '#3C3C3C': '#C0C0C0', // Gümüşü
+            '#474747': '#B0B0B0', // Boz
+            '#555555': '#A9A9A9', // Tünd boz
+            '#666666': '#DCDCDC', // Gainsboro
+            '#2C003E': '#DDA0DD', // Plum
+            '#4B0082': '#E6E6FA', // Lavanda
+            '#5D3A61': '#D8BFD8', // Thistle
+            '#3F2E56': '#DDA0DD', // Plum
+            '#4A235A': '#E6E6FA', // Lavanda
+            'url("Bmw2.jpg")': null // Şəkil olduqda ilkin rənglər
+        };
+
+        let currentBgIndex = backgroundColors.length - 1; // İlkin olaraq şəkil
+
+        function changeLanguage() {
+            const lang = document.getElementById("language-selector").value;
+            const t = translations[lang];
+
+            document.getElementById("page-title").textContent = t.pageTitle;
+            document.title = t.pageTitle;
+            document.getElementById("marquee-text").textContent = t.marqueeText;
+            document.getElementById("main-title").textContent = t.mainTitle;
+            document.getElementById("btn-engine").textContent = t.btnEngine;
+            document.getElementById("btn-speed").textContent = t.btnSpeed;
+            document.getElementById("btn-review").textContent = t.btnReview;
+            document.getElementById("btn-gearbox").textContent = t.btnGearbox;
+            document.getElementById("btn-about").textContent = t.btnAbout;
+            document.getElementById("btn-models").textContent = t.btnModels;
+            document.getElementById("btn-instagram").textContent = t.btnInstagram;
+            document.getElementById("btn-engine-details").textContent = t.btnEngineDetails;
+            document.getElementById("btn-tech").textContent = t.btnTech;
+            document.getElementById("btn-fuel").textContent = t.btnFuel;
+            document.getElementById("btn-turbo").textContent = t.btnTurbo;
+            document.getElementById("btn-oil").textContent = t.btnOil;
+            document.getElementById("btn-oil-filter").textContent = t.btnOilFilter;
+            document.getElementById("btn-oil-change").textContent = t.btnOilChange;
+            document.getElementById("btn-engine-block").textContent = t.btnEngineBlock;
+            document.getElementById("btn-cylinder-head").textContent = t.btnCylinderHead;
+            document.getElementById("btn-turbo-az").textContent = t.btnTurboAz;
+            document.querySelector("#chat-box h4").textContent = t.chatTitle;
+            document.getElementById("userInput").placeholder = t.chatPlaceholder;
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatBox = document.getElementById("chat-box");
+            const chatToggleBtn = document.getElementById("chat-toggle-btn");
+            const bgToggleBtn = document.getElementById("bg-toggle-btn");
+            const chat = document.getElementById("chat");
+            const input = document.getElementById("userInput");
+            const buttons = document.querySelectorAll(".dynamic-bg");
+            const headings = document.querySelectorAll("h1");
+
+            chatToggleBtn.addEventListener("click", () => {
+                chatBox.classList.toggle("active");
+                chatToggleBtn.textContent = chatBox.classList.contains("active") ? "AI Çatı Bağla" : "AI Çat";
+            });
+
+            bgToggleBtn.addEventListener("click", () => {
+                currentBgIndex = (currentBgIndex + 1) % backgroundColors.length;
+                const newBg = backgroundColors[currentBgIndex];
+                const buttonColor = buttonColors[newBg] || null;
+
+                if (newBg.startsWith('url')) {
+                    document.body.style.backgroundImage = newBg;
+                    document.body.style.backgroundColor = '';
+                    buttons.forEach(btn => {
+                        btn.style.backgroundColor = btn.getAttribute('data-original-bg');
+                        btn.style.color = btn.getAttribute('data-original-color') || '#fff';
+                    });
+                    headings.forEach(h => h.style.color = '#FFFFFF');
+                } else {
+                    document.body.style.backgroundImage = '';
+                    document.body.style.backgroundColor = newBg;
+                    buttons.forEach(btn => {
+                        btn.style.backgroundColor = buttonColor;
+                        btn.style.color = '#FFFFFF';
+                    });
+                    headings.forEach(h => h.style.color = '#FFFFFF');
+                }
+            });
+
+            // İlkin düymə rənglərini saxla
+            buttons.forEach(btn => {
+                btn.setAttribute('data-original-bg', btn.style.backgroundColor);
+                btn.setAttribute('data-original-color', btn.style.color || '#fff');
+            });
+
+            input.addEventListener("keypress", e => {
+                if (e.key === "Enter") {
+                    const userText = input.value.trim();
+                    if (userText) {
+                        const lang = document.getElementById("language-selector").value;
+                        const t = translations[lang];
+                        chat.innerHTML += `<div><b>${t.chatUser}</b> ${userText}</div>`;
+                        input.value = "";
+
+                        let reply = t.chatDefault;
+
+                        if (userText.toLowerCase().includes("mator") || userText.toLowerCase().includes("двигател") || userText.toLowerCase().includes("engine")) {
+                            reply = t.chatEngine;
+                        } else if (userText.toLowerCase().includes("yanacaq") || userText.toLowerCase().includes("топливо") || userText.toLowerCase().includes("fuel")) {
+                            reply = t.chatFuel;
+                        } else if (userText.toLowerCase().includes("sürət") || userText.toLowerCase().includes("скорость") || userText.toLowerCase().includes("speed")) {
+                            reply = t.chatSpeed;
+                        } else if (userText.toLowerCase().includes("salam") || userText.toLowerCase().includes("привет") || userText.toLowerCase().includes("hello")) {
+                            reply = t.chatHello;
+                        } else if (userText.toLowerCase().includes("model") || userText.toLowerCase().includes("модель") || userText.toLowerCase().includes("model")) {
+                            reply = t.chatModel;
+                        }
+
+                        chat.innerHTML += `<div style="color:#005BAC;"><b>AI:</b> ${reply}</div>`;
+                        chat.scrollTop = chat.scrollHeight;
+                    }
+                }
+            });
+
+            // İlkin dil Azərbaycan dili olaraq təyin edilir
+            document.getElementById("language-selector").value = "az";
+            changeLanguage();
+        });
+    </script>
+
+
+</body>
+</html>
